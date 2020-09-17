@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- React依赖 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <script>
+    // 1. JSX本质是 React.createElement(component, props, ...'children')的语法糖
+    // 2. 所有JSX最终都会被 babel 转换成 React.createElement()的函数调用
+    // const message = <h2>Hello React</h2>
+    // 3. JSX ---> 经过babel转化 ---> React.createElement() ---> JS 对象树(虚拟DOM)  ---> React.render()函数映射出浏览器识别的真实DOM
+    // 4. (1)为何要使用虚拟DOM JS对象树直接存放与内存中,方便操作,虚拟DOM是一个非常简单的JS对象
+    //    (2)频繁的操作DOM,非常损耗性能
+    //    (3)原生DOM不方便跟踪状态
+    //    (4)我们可以用React.render()函数 让虚拟DOM和真实DOM同步起来,这个过程叫做协调 Reconciliation
+    const message2 = React.createElement('h2', null, 'Hello React2');
+    ReactDOM.render(message2, document.getElementById('app'))
+    </script>
+</body>
+</html>

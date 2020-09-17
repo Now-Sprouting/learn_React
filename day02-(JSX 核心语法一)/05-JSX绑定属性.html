@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border {
+            width: 100px;
+            height: 100px;
+            border: 10px solid black;
+        }
+        .success {
+            background-color: green;
+        }
+        .error {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- React依赖 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+    // 封装组件
+    class App extends React.Component {
+        handleImgUrl(url, size){
+            return url + `?param=${size}x${size}`
+        }
+        constructor() {
+            super();
+            this.state = {
+                title: '我是标题',
+                imgUrl: 'http://p2.music.126.net/Tld8MKjMj-1QK0lSq5aZVA==/109951165056310006.jpg',
+                link: 'http://www.baidu.com',
+                isError: true
+            }
+        }
+        // render 函数中事件调用时this指向undefinded
+        render() {
+            const {title, imgUrl, link, isError} = this.state;
+            return (
+                <div>
+                    {/*1.普通属性*/}
+                    <h2 title={title}>鼠标放在我上面会有文字</h2>
+                    <img src={this.handleImgUrl(imgUrl, 200)} alt="正在加载中..."/>
+                    <a href={link} target="_blank">百度</a>
+                    {/*2.class属性*/}
+                    <div className="border success"></div>
+                    <div className={'border success'}></div>
+                    <div className={'border success' + (isError ? ' error' : '')}></div>
+                    {/*3.style属性*/}
+                    <div style={{color: "pink", fontSize:"50px"}}>style属性演示</div>
+                </div>
+            )
+    }
+}
+    // 渲染组件
+    ReactDOM.render(<App/>, document.getElementById('app'))
+    </script>
+</body>
+</html>

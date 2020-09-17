@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- React依赖 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+    // 封装组件
+    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                fruits: ['苹果', '香蕉', '橘子', '草莓']
+            }
+        }
+        // render 函数中事件调用时this指向undefinded
+        render() {
+            return (
+                <div>
+                    <ul>
+                        {this.state.fruits.map((item, index, array) => {
+                            return (
+                                <li
+                                onClick={ e => {this.printName(item, index, e)}}>
+                                {item}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            )
+        }
+        printName(item, index, event) {
+            console.log(item, index, event)
+        }
+}
+    // 渲染组件
+    ReactDOM.render(<App/>, document.getElementById('app'))
+    </script>
+</body>
+</html>

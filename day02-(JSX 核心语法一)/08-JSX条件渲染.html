@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- React依赖 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+    // 封装组件
+    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                isLogin: false,
+            }
+        }
+        // render 函数中事件调用时this指向undefinded
+        render() {
+            // 1.if else 条件判断
+            let {isLogin, status} = this.state
+            let message = ''
+            let order = ''
+            if (isLogin) {
+                message = '欢迎回来'
+                order = '退出'
+            } else {
+                message = '您好, 请登录'
+                order = '登录'
+            }
+            return (
+                <div>
+                    <h2>{message}</h2>
+                    <button onClick = { e => this.changeState()}>{order}</button>
+                    {/*2.三元表达式*/}
+                    <h2>{isLogin ? '未登录状态' : '已登陆状态'}</h2> 
+                    {/*3.与运算符*/}
+                    <h2>{isLogin && '这是登录之后才能看见的内容'}</h2>
+                </div>
+            )
+        }
+        changeState() {
+            console.log(11)
+            this.setState({
+                isLogin : !this.state.isLogin,
+            })
+        }
+}
+    // 渲染组件
+    ReactDOM.render(<App/>, document.getElementById('app'))
+    </script>
+</body>
+</html>

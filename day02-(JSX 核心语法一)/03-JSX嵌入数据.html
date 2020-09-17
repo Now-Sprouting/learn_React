@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- React依赖 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+    // 封装组件
+    class App extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                // 1.JSX嵌入数据中 字符,数字,数组类型可以正常显示
+                name: 'Andy', /* String */
+                age: 18, /* Number */
+                fruits: ['香蕉', '苹果', '鸭梨'],/* Array */
+                // 2.JSX嵌入数据中 null undefined boolean数据类型不可以正常显示(显示方法:使用不同方法转换成String类型)
+                class: null,
+                grade: undefined,
+                flag: false
+                // 3.JSX中,对象数据类型不能作为子元素
+            }
+        }
+        // render 函数中事件调用时this指向undefinded
+        render() {
+            return (
+                <div> 
+                    {/*可以正常展示的数据类型*/}
+                    <h2>{this.state.name}</h2>
+                    <h2>{this.state.age}</h2>
+                    <h2>{this.state.fruits}</h2>
+                    {/*不可以正常展示的数据类型*/}
+                    <h2>{this.state.class + ''}</h2>
+                    <h2>{this.state.grade + ''}</h2>
+                    <h2>{this.state.flag + ''}</h2>
+                </div>
+            )
+    }
+}
+    // 渲染组件
+    ReactDOM.render(<App/>, document.getElementById('app'))
+    </script>
+</body>
+</html>
