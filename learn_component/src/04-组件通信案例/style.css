@@ -1,0 +1,10 @@
+.tab-control {
+    display: flex;
+}
+.tab-item.current-tab {
+    flex: 1;
+    color: red;
+}
+.tab-item {
+    flex: 1;
+}
