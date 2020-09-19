@@ -1,0 +1,16 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.nav-bar {
+    display: flex;
+}
+.nav-middle {
+    background-color: purple;
+    flex: 3;
+}
+.nav-left, .nav-right{
+    flex: 1;
+    height: 40px;
+    background-color: pink;
+}
