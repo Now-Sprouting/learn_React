@@ -1,5 +1,5 @@
 import React from 'react'
-// 一.类组件
+// *一.类组件
 // export default class App extends React.Component {
 //     constructor() {
 //         super();
@@ -15,7 +15,7 @@ import React from 'react'
 // }
 
 
-// 二.函数式组件
+// *二.函数式组件
 // 函数式组件的特点:
 // 1.没有this
 // 2.没有生命周期
@@ -28,7 +28,7 @@ export default function App() {
 }
 
 
-// 三.render函数的合法返回值
+// *三.render函数的合法返回值
 // 1.React元素
 // 2.数组或者fragments
 // 3.Portals

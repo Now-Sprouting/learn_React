@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-// 1.创建Context对象(大括号中的值为默认值:可以不传递)
+//* 1.创建Context对象(大括号中的值为默认值:可以不传递)
 const UserContext = React.createContext({
     userName: 'zhangsan',
     passWord: 'admin'
@@ -18,7 +18,7 @@ class User extends Component {
     }
 }
 
-// 3.函数式组件特殊写法,通过UserContext.Consumer包裹拿到传递过来的value值
+//* 3.函数式组件特殊写法,通过UserContext.Consumer包裹拿到传递过来的value值
 function Usernotic() {
     return (
         <UserContext.Consumer>

@@ -16,7 +16,7 @@ class APP extends Component {
         );
     }
     componentDidMount() {
-        // 在这个生命周期函数中页面已经挂载完毕.可以操作DOM了
+        //* 在这个生命周期函数中页面已经挂载完毕.可以操作DOM了
     
         document.getElementById('btn').addEventListener('click', () => {
             this.setState({
@@ -28,7 +28,7 @@ class APP extends Component {
         })
     }    
     changeMessage() {
-        // 两种情况下setState()是同步更新
+        //* 两种情况下setState()是同步更新
         // 1.在setTimeout中调用this.setState()是同步更新
         // 2.在原生DOM操作中,setState是同步
         setTimeout(() => {

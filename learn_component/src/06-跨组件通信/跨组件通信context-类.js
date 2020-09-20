@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-// 1.创建Context对象(大括号中的值为默认值:可以不传递)
+//* 1.创建Context对象(大括号中的值为默认值:可以不传递)
 const UserContext = React.createContext({
     userName: 'zhangsan',
     passWord: 'admin'
@@ -31,7 +31,7 @@ class Usernotic extends Component {
             )
         }
 }
-// 3. 通过设置Usernotic.contextType来获取到 UserContext Provider过来的值
+//* 3. 通过设置Usernotic.contextType来获取到 UserContext Provider过来的值
 Usernotic.contextType = UserContext;
 
 export default class App extends Component {
