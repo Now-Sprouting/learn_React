@@ -21,6 +21,7 @@ export default class TransitionGroupDemo extends PureComponent {
             this.state.names.map((item, index) => {
               return (
                 <CSSTransition 
+                  key={item}
                   timeout={500}
                   classNames="item">
                   <div>
