@@ -1,7 +1,7 @@
+// *无封装connect版本
 import React, { PureComponent } from 'react';
-
 import store from '../store';
-import { 
+import {
   subAction
 } from "../store/actionCreator";
 
@@ -29,7 +29,7 @@ export default class About extends PureComponent {
   render() {
     return (
       <div>
-        <hr/>
+        <hr />
         <h1>About</h1>
         <h2>当前计数: {this.state.counter}</h2>
         <button onClick={e => this.decrement()}>-1</button>
