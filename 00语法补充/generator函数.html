@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 普通函数
+        // function foo() {
+        //     console.log('普通函数被执行')
+        // }
+        // foo()
+
+        // 2. generator函数(不会被直接执行)
+        // function* foo () {
+        //     console.log('foo*函数被执行');
+        // }
+        // foo()
+
+        // 3. yield
+        // function* foo() {
+        //     yield 'one';
+        //     yield 'two';
+        //     yield 'three';
+        //     return 'end'
+        // }
+        // let it = foo();
+        // console.log(it.next().value);  
+        // console.log(it.next().value);
+        // console.log(it.next());
+        // console.log(it.next());   
+
+        //  4.定义一个生成器函数,依次生成 1 - 10
+        // function* generateNumber() {
+        //     for (var i = 1; i <= 10; i++) {
+        //         yield i;
+        //     }
+        // }
+        // let it = generateNumber();
+        // console.log(it.next().value);
+
+
+        // 6.generator和Promise一起来使用
+        function* foo() {
+            let result = yield new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('成功')
+                }, 3000)
+            })
+            console.log(result);
+        }
+        let it = foo()
+        it.next().value.then(res => {
+            it.next(res)
+        });
+
+    </script>
+</body>
+
+</html>

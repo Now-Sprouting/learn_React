@@ -1,16 +1,8 @@
-//* 引入react-redux库版本(异步请求) (thunk中间件)
+//* 引入react-redux库版本
 import React, { PureComponent } from "react";
+import { subAction, decAction } from "../store/actionCreator";
 import { connect } from 'react-redux'
-import {
-  subAction,
-  decAction,
-  getHomeMultidataAction
-} from "../store/actionCreator";
-
 class Home extends PureComponent {
-  componentDidMount() {
-    this.props.getHomeMultidata();
-  }
   render() {
     return (
       <div>
@@ -35,10 +27,6 @@ const mapdispatchToProps = dispatch => {
     },
     subNumber: function (num) {
       dispatch(subAction(num))
-    },
-    // *dispatch一个函数,在action中就会执行这个函数
-    getHomeMultidata: function () {
-      dispatch(getHomeMultidataAction);
     }
   }
 }

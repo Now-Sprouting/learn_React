@@ -1,15 +1,24 @@
-//* 引入react-redux库版本(异步请求) (thunk中间件)
+//* 引入react-redux库版本(异步请求)
 import React, { PureComponent } from "react";
-import { connect } from 'react-redux'
 import {
   subAction,
   decAction,
-  getHomeMultidataAction
+  changeBannersAction,
+  changeRecommendAction
 } from "../store/actionCreator";
-
+import { connect } from 'react-redux'
+import axios from 'axios'
 class Home extends PureComponent {
   componentDidMount() {
-    this.props.getHomeMultidata();
+    axios({
+      url: 'http://123.207.32.32:8000/home/multidata'
+    }).then(res => {
+      const {data} = res.data;
+      const banner = data.banner.list;
+      const recommend = data.recommend.list;
+      this.props.changeBanner(banner);
+      this.props.changeRecommend(recommend);
+    })
   }
   render() {
     return (
@@ -36,9 +45,11 @@ const mapdispatchToProps = dispatch => {
     subNumber: function (num) {
       dispatch(subAction(num))
     },
-    // *dispatch一个函数,在action中就会执行这个函数
-    getHomeMultidata: function () {
-      dispatch(getHomeMultidataAction);
+    changeBanner: function(banner) {
+      dispatch(changeBannersAction(banner))
+    },
+    changeRecommend: function(recommend) {
+      dispatch(changeRecommendAction(recommend))
     }
   }
 }

@@ -3,10 +3,11 @@ import React, { PureComponent } from "react";
 import { connect } from 'react-redux'
 import {
   subAction,
-  decAction,
-  getHomeMultidataAction
-} from "../store/actionCreator";
-
+  decAction
+} from "../store/counter/actionCreators";
+import {
+  fetchHomeMultidataAction
+} from "../store/home/actionCreators";
 class Home extends PureComponent {
   componentDidMount() {
     this.props.getHomeMultidata();
@@ -25,7 +26,7 @@ class Home extends PureComponent {
 }
 const mapStateToProps = state => {
   return {
-    counter: state.counter
+    counter: state.counterInfo.counter
   }
 }
 const mapdispatchToProps = dispatch => {
@@ -38,7 +39,7 @@ const mapdispatchToProps = dispatch => {
     },
     // *dispatch一个函数,在action中就会执行这个函数
     getHomeMultidata: function () {
-      dispatch(getHomeMultidataAction);
+      dispatch(fetchHomeMultidataAction);
     }
   }
 }

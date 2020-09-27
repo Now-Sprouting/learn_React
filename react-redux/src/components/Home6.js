@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import {
   subAction,
   decAction,
-  getHomeMultidataAction
+  fetchHomeMultidataAction
 } from "../store/actionCreator";
 
 class Home extends PureComponent {
@@ -38,7 +38,7 @@ const mapdispatchToProps = dispatch => {
     },
     // *dispatch一个函数,在action中就会执行这个函数
     getHomeMultidata: function () {
-      dispatch(getHomeMultidataAction);
+      dispatch(fetchHomeMultidataAction);
     }
   }
 }
