@@ -6,7 +6,8 @@ export default function ContextHookDemo(props) {
   const user = useContext(UserContext);
   const theme = useContext(ThemeContext);
 
-  console.log(user, theme);
+  console.log(user);
+  console.log(theme);
 
   return (
     <div>
