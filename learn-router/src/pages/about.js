@@ -33,14 +33,14 @@ export default class About extends PureComponent {
         <NavLink exact to="/about/contact" activeClassName="about-active">联系我们</NavLink>
         <button onClick={e => this.jumpToJoin()}>加入我们</button>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path="/about" component={AboutHisotry}/>
           <Route path="/about/culture" component={AboutCulture}/>
           <Route path="/about/contact" component={AboutContact}/>
           <Route path="/about/join" component={AboutJoin}/>
-        </Switch>
+        </Switch> */}
 
-        {/* {renderRoutes(this.props.route.routes)} */}
+        {renderRoutes(this.props.route.routes)}
       </div>
     )
   }
