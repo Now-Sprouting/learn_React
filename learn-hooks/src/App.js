@@ -10,6 +10,17 @@ import ChangeTitleByHook from './03-useEffect的使用/02-Hook实现title的动�
 import SubscribeToCancle from './03-useEffect的使用/03-useEffect模拟订阅取消'
 import MutiUseEffect from './03-useEffect的使用/04-多个useEffect同时使用'
 import ContextHookDemo from './04-useContext的使用/useContext的使用';
+import UseReducerHome from './05-useReducer的使用/home'
+import UseReducerAbout from './05-useReducer的使用/about'
+import CallbackHookDemo01 from './06-useCallback的使用(性能优化)/01-useCallback不能进行的性能优化'
+import CallbackHookDemo02 from './06-useCallback的使用(性能优化)/02-useCallback进行性能优化'
+import MemoHookDemo01 from './07-useMemo的使用(性能优化)/01-useMemo复杂计算的应用'
+import MemoHookDemo2 from './07-useMemo的使用(性能优化)/02-useMemo传入子组件引用类型'
+import RefHookDemo01 from './08-useRef的使用/01-useRef引用DOM'
+import RefHookDemo02 from './08-useRef的使用/02-useRef引用其他数据'
+import RefHookDemo03 from './08-useRef的使用/03-useRef引用其他数据的应用-记录上一次的值'
+import ForwordRefDemo from './09-useImperativeHandle的使用/01-回顾forwordRef的用法'
+import UseImperativeHookDemo from './09-useImperativeHandle的使用/02-useImperative的用法'
 
 export const ThemeContext = createContext();
 export const UserContext = createContext();
@@ -28,11 +39,13 @@ export default function App() {
             <ClassHook3 />
             <hr /> */}
 
+
             {/* 02-useState的使用 */}
             {/* <MutiState />
             <hr />
             <ComplexState />
             <hr/> */}
+
 
             {/* 03-useEffect的使用 */}
             {/* <ChangeTitleByClass/>
@@ -45,13 +58,35 @@ export default function App() {
              <h2>App中</h2>
             <button onClick={e => {setState(!state)}}>change</button> */}
 
-            {/* useContext的使用 */}
-            <UserContext.Provider value={{ name: "why", age: 18 }}>
+
+            {/* 04-useContext的使用 */}
+            {/* <UserContext.Provider value={{ name: "why", age: 18 }}>
                 <ThemeContext.Provider value={{ fontSize: "30px", color: "red" }}>
                     <ContextHookDemo />
                 </ThemeContext.Provider>
-            </UserContext.Provider>
+            </UserContext.Provider> */}
 
+
+            {/* 05-useReducer 的使用 */}
+            {/* <UseReducerHome />
+            <UseReducerAbout /> */}
+
+            {/* 06-useCallback 的使用 */}
+            {/* <CallbackHookDemo01/> */}
+            {/* <CallbackHookDemo02/> */}
+
+            {/* 07-useMemo的使用 */}
+            {/* <MemoHookDemo01 /> */}
+            {/* <MemoHookDemo2 /> */}
+
+            {/* 08-useRef的使用 */}
+            {/* <RefHookDemo01 /> */}
+            {/* <RefHookDemo02 /> */}
+            {/* <RefHookDemo03/> */}
+
+            {/* 09-forwodRef的使用 */}
+            {/* <ForwordRefDemo /> */}
+            <UseImperativeHookDemo />
         </div>
     )
 }
