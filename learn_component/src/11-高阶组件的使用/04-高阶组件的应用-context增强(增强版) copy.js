@@ -5,12 +5,12 @@ function withUser(WrappedComponent) {
     return props => {
         return (
             <UserContxt.Consumer>
-            {
-                user => {
-                    return <WrappedComponent {...user} {...props}/>
+                {
+                    user => {
+                        return <WrappedComponent {...user} {...props} />
+                    }
                 }
-            }
-        </UserContxt.Consumer>
+            </UserContxt.Consumer>
         )
     }
 }
@@ -23,7 +23,7 @@ const UserContxt = createContext({
 class Home extends PureComponent {
     render() {
         return (
-        <h2>{this.props.name + this.props.password + this.props.sex}</h2> 
+            <h2>{this.props.name + this.props.password + this.props.sex}</h2>
         )
     }
 }

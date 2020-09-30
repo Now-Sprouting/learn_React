@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useLayoutEffect } from 'react'
 import ClassRouter from './01-体验hook/01-counter-class'
 import ClassHook from './01-体验hook/02-counter-hook'
 import ClassHook2 from './01-体验hook/03-counter-hook'
@@ -21,12 +21,21 @@ import RefHookDemo02 from './08-useRef的使用/02-useRef引用其他数据'
 import RefHookDemo03 from './08-useRef的使用/03-useRef引用其他数据的应用-记录上一次的值'
 import ForwordRefDemo from './09-useImperativeHandle的使用/01-回顾forwordRef的用法'
 import UseImperativeHookDemo from './09-useImperativeHandle的使用/02-useImperative的用法'
+import UseEffectDemo from './10-useLayoutEffect的使用/01-useEffect的count修改'
+import UseLayoutEffectDemo from './10-useLayoutEffect的使用/02-useLayoutEffect的count修改'
+import CustomLifeHookDemo01 from './11-自定义Hook的使用/01-认识自定义Hook'
+import CustomcontextShareHook from './11-自定义Hook的使用/02-自定义hook练习-context共享'
+import CustromScrollPositionHook from './11-自定义Hook的使用/03-自定义hook练习-获取滚动位置'
+import CustromDataStoreHook from './11-自定义Hook的使用/04-自定义hook练习-localstore存储'
 
 export const ThemeContext = createContext();
+
 export const UserContext = createContext();
+export const TokenContext = createContext();
 
 export default function App() {
     const [state, setState] = useState(true)
+    const [show, setshow] = useState(true)
     return (
         <div>
             {/* 01-体验Hook */}
@@ -86,7 +95,24 @@ export default function App() {
 
             {/* 09-forwodRef的使用 */}
             {/* <ForwordRefDemo /> */}
-            <UseImperativeHookDemo />
+            {/* <UseImperativeHookDemo /> */}
+
+            {/* 10-useLayoutEffect的使用 */}
+            {/* <UseEffectDemo /> */}
+            {/* <UseLayoutEffectDemo /> */}
+
+            {/* 11-自定义Hook的使用 */}
+            {/* {show && <CustomLifeHookDemo01 />}
+            <button onClick={e => {setshow(!show)}}>创建/销毁</button> */}
+
+            {/* <UserContext.Provider value={{ name: 'Ding', age: 18 }}>
+                <TokenContext.Provider value={{token: 'sadkja'}}>
+                    <CustomcontextShareHook />
+                </TokenContext.Provider>
+            </UserContext.Provider> */}
+
+            {/* <CustromScrollPositionHook /> */}
+            <CustromDataStoreHook />
         </div>
     )
 }
