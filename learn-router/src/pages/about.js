@@ -21,6 +21,7 @@ export function AboutJoin(props) {
 
 export default class About extends PureComponent {
   render() {
+    // *通过props可以拿到 route
     console.log(this.props.route);
     // *除了 renderRoutes react-router-config 还提供了 matchRoutes这个函数
     const branch = matchRoutes(this.props.route.routes, "/about");
