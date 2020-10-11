@@ -45,8 +45,8 @@ export default function App() {
             <hr />
             <ClassHook2 />
             <hr />
-            <ClassHook3 />
-            <hr /> */}
+            <ClassHook3 /> */}
+            <hr />
 
 
             {/* 02-useState的使用 */}
@@ -57,15 +57,15 @@ export default function App() {
 
 
             {/* 03-useEffect的使用 */}
-            {/* <ChangeTitleByClass/>
-            <hr/>
-            <ChangeTitleByHook/>
-            <hr/>
-            {state && <SubscribeToCancle/>}
-            <hr/>
-            <MutiUseEffect/>
-             <h2>App中</h2>
-            <button onClick={e => {setState(!state)}}>change</button> */}
+            {/* <ChangeTitleByClass/> */}
+            {/* <hr/> */}
+            {/* <ChangeTitleByHook/> */}
+            {/* <hr/> */}
+            {/* {state && <SubscribeToCancle/>} */}
+            {/* <hr/> */}
+            {/* <MutiUseEffect/> */}
+            {/* <h2>App中</h2>
+            <button onClick={e => { setState(!state) }}>change</button> */}
 
 
             {/* 04-useContext的使用 */}
@@ -85,7 +85,7 @@ export default function App() {
             {/* <CallbackHookDemo02/> */}
 
             {/* 07-useMemo的使用 */}
-            {/* <MemoHookDemo01 /> */}
+            <MemoHookDemo01 />
             {/* <MemoHookDemo2 /> */}
 
             {/* 08-useRef的使用 */}
@@ -112,7 +112,7 @@ export default function App() {
             </UserContext.Provider> */}
 
             {/* <CustromScrollPositionHook /> */}
-            <CustromDataStoreHook />
+            {/* <CustromDataStoreHook /> */}
         </div>
     )
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- *1.为什么引入immutableJs? -->
+    <!-- *答: 在实际开发中,数据量非常庞大,redux使用纯函数管理数据的时候,我们以前修改数据只是使用Object.assign()或者拓展运算符...来复制数据,这一直是一个性能和内存上面的问题, immutableJs的解决了这方面的问题 -->
+
+    <!-- *immutableJs的原理： -->
+    <!-- *immutableJs 构建出一个32叉树，每次修改数据时，都会返回一个新的数据，旧的数据不会发生改变，新的对象会尽可能的利用原来的数据结构而不会对性能造成浪费 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
+    <script>
+        const im = Immutable;
+        // 对象使用 Map
+        const info = {
+            name: "kobe",
+            age: 30,
+            friend: {
+                name: "james",
+                age: 25
+            }
+        }
+        const infoIM = im.Map(info);
+        const infoIM2 = infoIM.set("name", "why");
+        console.log(infoIM.get("name"));
+        console.log(infoIM2.get("name"));
+
+        // 数组使用List
+        const names = ["abc", "cba", "nba"];
+        const namesIM = im.List(names);
+        const arrIM = namesIM.set(0, "why");
+        console.log(namesIM.get(0));
+        console.log(arrIM.get(0));
+
+
+        // 涉及到深拷贝的类型使用formJS 
+        const info = {
+            name: "kobe",
+            age: 30,
+            friend: {
+                name: "james",
+                age: 25
+            }
+        }
+        // const infoIM = im.Map(info);
+        const infoIM = im.fromJS(info);
+        console.log(infoIM.get("friend"));
+
+    </script>
+</body>
+
+</html>
