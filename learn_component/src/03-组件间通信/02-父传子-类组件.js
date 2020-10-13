@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class Child extends Component {
+    // *为什么不使用constructor和super(props)定义props render函数中还能使用props
+    // *A :因为React内部已经做过处理,不调用默认在render函数中也能使用props
+    // constructor() {
+    //     super()
+    // }
     render () {
         const {name, age, height} = this.props;
         return (

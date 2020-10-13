@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app"></div>
     <!-- React依赖 -->
@@ -12,37 +14,47 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-    // 封装组件
-    class App extends React.Component {
-        constructor() {
-            super();
-            this.state = {
-                fruits: ['苹果', '香蕉', '橘子', '草莓']
+        // 封装组件
+        class App extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    fruits: ['苹果', '香蕉', '橘子', '草莓']
+                }
+            }
+            // render 函数中事件调用时this指向undefinded
+            render() {
+                return (
+                    <div>
+                        {/*react的onClick内部会调用btnClick.call(undefined, event)所以可以直接拿到event,
+                        通过箭头函数传递的时候因为箭头函数不能改变this指向,所以call中的undefined不起作用但是对象event还是被传递了过去
+                        */}
+                        <button onClick={this.btnClick}>button</button>
+                        <div>
+                            <ul>
+                                {this.state.fruits.map((item, index, array) => {
+                                    return (
+                                        <li
+                                            onClick={e => { this.printName(item, index, e) }}>
+                                            {item}
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                )
+            }
+            btnClick(event) {
+                console.log(event);
+            }
+            printName(item, index, event) {
+                console.log(item, index, event)
             }
         }
-        // render 函数中事件调用时this指向undefinded
-        render() {
-            return (
-                <div>
-                    <ul>
-                        {this.state.fruits.map((item, index, array) => {
-                            return (
-                                <li
-                                onClick={ e => {this.printName(item, index, e)}}>
-                                {item}
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </div>
-            )
-        }
-        printName(item, index, event) {
-            console.log(item, index, event)
-        }
-}
-    // 渲染组件
-    ReactDOM.render(<App/>, document.getElementById('app'))
+        // 渲染组件
+        ReactDOM.render(<App />, document.getElementById('app'))
     </script>
 </body>
+
 </html>

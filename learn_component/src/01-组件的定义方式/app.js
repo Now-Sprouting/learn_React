@@ -30,7 +30,7 @@ export default function App() {
 
 // *三.render函数的合法返回值
 // 1.React元素
-// 2.数组或者fragments
+// 2.数组或者Fragments
 // 3.Portals
 // 4.字符串或数值类型
 // 5.布尔类型或null

@@ -16,11 +16,12 @@
     class App extends React.Component {
         constructor() {
             super();
+            // 数据只能放在this.state中
             this.state = {
                 message: 'Hello World'
             }
         }
-        // render 函数中事件调用时this指向undefinded
+        // render 函数中事件调用时this指向undefinded(React内部处理的)
         render() {
             return (
                 <div>
