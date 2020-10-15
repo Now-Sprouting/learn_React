@@ -1,6 +1,6 @@
-import React, {PureComponent } from 'react';
+import React, {Component } from 'react';
 
-class App extends PureComponent {
+class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -26,14 +26,21 @@ class App extends PureComponent {
             </div>
         );
     }
-    // shouldComponentUpdate(prevProps, prevstate) {
-    //     if (prevstate.friends !== this.state.friends) {
-    //         return true
-    //     }
-    //     return false
-    // }
+    shouldComponentUpdate(newProps, newstate) {
+        if (newstate.friends !== this.state.friends) {
+            return true
+        }
+        return false
+    }
     inserchFriend() {
-        // *在shouldComponentUpdate中 两个变量只会做浅层次的比较,所以下面的浅拷贝也是可以的
+        // *在pureComponnet中 两个变量只会做浅层次的比较,所以下面的浅拷贝也是可以的
+        // const item = {name: 'Stephen', age: 30}
+        // this.state.friends.push(item)
+        // this.setState({
+        //     friends: this.state.friends
+        // })
+
+        // *ES6展开运算符浅拷贝,新生成一块内存空间
         const newFriends = [...this.state.friends]
         newFriends.push({ name: 'Stephen', age: 30});
         this.setState({

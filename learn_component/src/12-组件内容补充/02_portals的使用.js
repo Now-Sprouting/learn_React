@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
-// *有些时候,我么希望渲染的内容独立于父组件,甚至独立于当前挂载到的DOM元素上面,这时候就可以使用Protal方法
+// *有些时候,我们希望渲染的内容独立于父组件,甚至独立于当前挂载到的DOM元素上面,这时候就可以使用Protal方法
 class Modal extends PureComponent {
   render() {
     return ReactDOM.createPortal(
+      // *取到所有子组件
       this.props.children,
       document.getElementById("modal")
     )

@@ -17,7 +17,7 @@ class APP extends Component {
         );
     }
     changeMessage() {
-        //* 为什么修改message不会对name属性造成影响
+        //* 为什么修改message不会对name属性造成影响(setState中只传入了message,并没有传入name,很多人会担心name属性不复存在了)
         // 源码中用到了Object.assign({}, state, {message: '你好,React'}) 
         this.setState({
             message: '你好,React'

@@ -6,7 +6,7 @@ function Header() {
   return <h2>我是Header组件</h2>
 }
 
-// Main
+// Banner
 class Banner extends Component {
   render() {
     console.log("Banner render函数被调用");
@@ -67,7 +67,7 @@ export default class App extends Component {
       </div>
     )
   }
-
+  // *父组件重新渲染,子组件也会重新创建
   increment() {
     this.setState({
       counter: this.state.counter + 1

@@ -12,9 +12,11 @@ const initialState = {
 }
 
 //* redux三大特性之三: reducer
+// *第一次调用reducer时,第一个参数为上次的state为 undefined 所以给state设置初始值
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'INCREMENT':
+            // *不能直接对state进行修改,那样的话就会的对state产生副作用,reducer就不是一个纯函数了
             return { ...state, counter: state.counter + 1 }
         case 'DECREMENT':
             return { ...state, counter: state.counter - 1 }
@@ -43,7 +45,7 @@ const action3 = { type: 'ADD_NUMBER', num: 5 }
 const action4 = { type: 'SUB_NUMBER', num: 12 }
 
 
-//*2. 派发action
+//*2. 派发action(调用dispatch的时候,会给reducer传入两个参数,第一个参数是上次的state,第二个参数是dispatch的action)
 store.dispatch(action1)
 store.dispatch(action2)
 store.dispatch(action3)

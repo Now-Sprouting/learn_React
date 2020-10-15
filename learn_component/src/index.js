@@ -40,11 +40,12 @@ import ReactDOM from 'react-dom';
 // import App from './11-高阶组件的使用/04-高阶组件的应用-context增强(增强版) copy'
 // import App from './11-高阶组件的使用/05-高阶组件的应用-渲染判断鉴权'
 // import App from './11-高阶组件的使用/06_高阶组件应用-生命周期劫持-默认'
+// import App from './11-高阶组件的使用/07_高阶组件应用-生命周期劫持-增强'
 
 // import App from './12-组件内容补充/01_ref的转发'
-// import App from './12-组件内容补充/02_portals的使用'
+import App from './12-组件内容补充/02_portals的使用'
 // import './css/index.css'
 // import App from './12-组件内容补充/03_fragments的使用'
-import App from './12-组件内容补充/04_strictMode的使用'
+// import App from './12-组件内容补充/04_strictMode的使用'
 
 ReactDOM.render(<App name='Ding'/>, document.getElementById('root'));

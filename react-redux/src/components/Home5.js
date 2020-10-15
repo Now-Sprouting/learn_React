@@ -36,7 +36,8 @@ const mapdispatchToProps = dispatch => {
     subNumber: function (num) {
       dispatch(subAction(num))
     },
-    // *dispatch一个函数,在action中就会执行这个函数
+    // *普通的dispatch中传入的是对象
+    // *redux-thunk要求我们 dispatch一个函数,他在内部执行这个函数并作出一些处理,在action中就会执行这个函数
     getHomeMultidata: function () {
       dispatch(getHomeMultidataAction);
     }

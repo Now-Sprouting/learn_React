@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 // *2.自己封装 context And connect
-// import { StoreContext } from './utils/context'
+import { StoreContext } from './utils/context'
 
 //* 3.引入 redux库版本
 import { Provider } from 'react-redux'
@@ -15,9 +15,10 @@ ReactDOM.render(
   // <StoreContext.Provider value={store}>
   //   <App />
   // </StoreContext.Provider>,
+
+  //* 3.引入 redux库版本
   <Provider store={store}>
     <App />
   </Provider>,
-  //* 3.引入 redux库版本
   document.getElementById('root')
 );

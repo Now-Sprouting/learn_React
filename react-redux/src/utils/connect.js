@@ -10,6 +10,7 @@ export function connect(mapStateToProps, mapDispachToProps) {
                     storeState: mapStateToProps(context.getState())
                 }
             }
+            // *如果不写这些生命周期的话别的组件数据发生改变,自己组件监听不到数据的改变
             componentDidMount() {
                 this.unsubscribe = this.context.subscribe(() => {
                     this.setState({

@@ -11,6 +11,7 @@ function withRenderTime(WrappedComponent) {
     componentDidMount() {
       this.endTime = Date.now();
       const interval = this.endTime - this.beginTime;
+      console.log(WrappedComponent);
       console.log(`${WrappedComponent.name}渲染时间: ${interval}`)
     }
 
@@ -46,9 +47,3 @@ export default class App extends PureComponent {
     )
   }
 }
-
-class Person {
-
-}
-
-console.log(Person.name);
