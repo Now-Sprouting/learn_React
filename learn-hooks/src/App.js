@@ -29,8 +29,8 @@ import CustromScrollPositionHook from './11-自定义Hook的使用/03-自定义h
 import CustromDataStoreHook from './11-自定义Hook的使用/04-自定义hook练习-localstore存储'
 
 export const ThemeContext = createContext();
-
 export const UserContext = createContext();
+
 export const TokenContext = createContext();
 
 export default function App() {
@@ -45,8 +45,8 @@ export default function App() {
             <hr />
             <ClassHook2 />
             <hr />
-            <ClassHook3 /> */}
-            <hr />
+            <ClassHook3 />
+            <hr /> */}
 
 
             {/* 02-useState的使用 */}
@@ -57,15 +57,15 @@ export default function App() {
 
 
             {/* 03-useEffect的使用 */}
-            {/* <ChangeTitleByClass/> */}
-            {/* <hr/> */}
-            {/* <ChangeTitleByHook/> */}
-            {/* <hr/> */}
-            {/* {state && <SubscribeToCancle/>} */}
-            {/* <hr/> */}
+            {/* <ChangeTitleByClass/>
+            <hr/> */}
+            {/* <ChangeTitleByHook/>
+            <hr/> */}
+            {/* {state && <SubscribeToCancle/>}
+            <button onClick={e => { setState(!state) }}>change</button>
+            <hr/> */}
             {/* <MutiUseEffect/> */}
-            {/* <h2>App中</h2>
-            <button onClick={e => { setState(!state) }}>change</button> */}
+
 
 
             {/* 04-useContext的使用 */}
@@ -85,7 +85,7 @@ export default function App() {
             {/* <CallbackHookDemo02/> */}
 
             {/* 07-useMemo的使用 */}
-            <MemoHookDemo01 />
+            {/* <MemoHookDemo01 /> */}
             {/* <MemoHookDemo2 /> */}
 
             {/* 08-useRef的使用 */}
@@ -99,7 +99,7 @@ export default function App() {
 
             {/* 10-useLayoutEffect的使用 */}
             {/* <UseEffectDemo /> */}
-            {/* <UseLayoutEffectDemo /> */}
+            <UseLayoutEffectDemo />
 
             {/* 11-自定义Hook的使用 */}
             {/* {show && <CustomLifeHookDemo01 />}
