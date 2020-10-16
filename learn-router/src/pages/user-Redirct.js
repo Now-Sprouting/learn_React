@@ -11,16 +11,11 @@ export default class User extends PureComponent {
   }
 
   render() {
-    return (
-      <h2>User</h2>
-    )
-
-    
-    // return this.state.isLogin ? (
-    //   <div>
-    //     <h2>User</h2>
-    //     <h2>用户名: coderwhy</h2>
-    //   </div>
-    // ): <div><Redirect to="/login"/></div>
+    return this.state.isLogin ? (
+      <div>
+        <h2>User</h2>
+        <h2>用户名: coderwhy</h2>
+      </div>
+    ): <div><Redirect to="/login"/></div>
   }
 }

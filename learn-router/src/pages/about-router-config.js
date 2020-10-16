@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { NavLink, Switch, Route } from 'react-router-dom';
+import { renderRoutes, matchRoutes } from 'react-router-config';
 
 
 export function AboutHisotry(props) {
@@ -20,6 +21,12 @@ export function AboutJoin(props) {
 
 export default class About extends PureComponent {
   render() {
+    // *通过props可以拿到 route
+    console.log(this.props.route);
+    // *除了 renderRoutes react-router-config 还提供了 matchRoutes这个函数
+    const branch = matchRoutes(this.props.route.routes, "/about");
+    console.log(branch);
+
     return (
       <div>
         <NavLink exact to="/about" activeClassName="about-active">企业历史</NavLink>
@@ -27,12 +34,7 @@ export default class About extends PureComponent {
         <NavLink exact to="/about/contact" activeClassName="about-active">联系我们</NavLink>
         <button onClick={e => this.jumpToJoin()}>加入我们</button>
 
-        <Switch>
-          <Route exact path="/about" component={AboutHisotry}/>
-          <Route path="/about/culture" component={AboutCulture}/>
-          <Route path="/about/contact" component={AboutContact}/>
-          <Route path="/about/join" component={AboutJoin}/>
-        </Switch>
+        {renderRoutes(this.props.route.routes)}
       </div>
     )
   }

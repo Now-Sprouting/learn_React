@@ -3,7 +3,7 @@ a {
 }
 
 a.active, a.link-active {
-  color: red;
+  color: blue;
   font-size: 30px;
 }
 

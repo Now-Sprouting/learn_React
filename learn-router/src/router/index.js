@@ -1,5 +1,5 @@
 import Home from '../pages/home';
-import About, { AboutHisotry, AboutCulture, AboutContact, AboutJoin } from '../pages/about';
+import AboutRouterConfig, { AboutHisotry, AboutCulture, AboutContact, AboutJoin } from '../pages/about-router-config';
 import Profile from '../pages/profile';
 import User from '../pages/user';
 
@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: "/about",
-    component: About,
+    component: AboutRouterConfig,
     routes: [
       {
         path: "/about",
